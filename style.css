@@ -1,7 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+h1 { text-align: center; }
+
+/* Меню 3 точки */
+.top-menu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+#menu-btn {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #eee;
+}
+
+/* Скрытые элементы */
+.hidden {
+  display: none;
+}
+
+.content-block {
+  margin-top: 60px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Отзывы */
+#review-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#review-form input, #review-form textarea {
+  padding: 8px;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+#review-form button {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .review-card {
   border: 1px solid #ddd;
   padding: 8px;
   margin: 5px 0;
   border-radius: 6px;
   background: #f1f1f1;
+}
+
+/* Таблица записи */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+td.available {
+  background-color: #d4edda;
+  cursor: pointer;
+}
+
+td.occupied {
+  background-color: #f8d7da;
+  color: #555;
+}
+
+td.selected {
+  background-color: #bee5ff;
 }
