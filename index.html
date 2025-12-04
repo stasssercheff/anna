@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Преподаватель английского</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Преподаватель английского</h1>
+
+<!-- Меню 3 точки -->
 <div class="top-menu">
   <div id="menu-btn">•••</div>
   <div id="menu-dropdown" class="hidden">
@@ -7,14 +20,46 @@
   </div>
 </div>
 
+<!-- Блоки контента -->
 <div id="reviews-block" class="content-block hidden">
-  <!-- тут форма и отзывы -->
+  <h2>Отзывы</h2>
+  <div id="reviews-section"></div>
+  <form id="review-form">
+    <input type="text" id="reviewer" placeholder="Ваше имя" required>
+    <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
+    <button type="submit">Добавить отзыв</button>
+  </form>
 </div>
 
 <div id="experience-block" class="content-block hidden">
-  <!-- тут опыт и дипломы -->
+  <h2>Опыт и сертификаты</h2>
+  <p>Преподавательский стаж: 5 лет</p>
+  <p>Сертификаты: CELTA, TESOL</p>
 </div>
 
 <div id="schedule-block" class="content-block hidden">
-  <!-- тут таблица записи -->
+  <h2>Запись на урок</h2>
+  <div id="schedule-container">
+    <table id="schedule">
+      <thead>
+        <tr>
+          <th>Время</th>
+          <th>Пн</th>
+          <th>Вт</th>
+          <th>Ср</th>
+          <th>Чт</th>
+          <th>Пт</th>
+          <th>Сб</th>
+          <th>Вс</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS сгенерирует строки слотов -->
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<script src="script.js"></script>
+</body>
+</html>
