@@ -1,10 +1,30 @@
+// ================== Меню 3 точки ==================
+const menuBtn = document.getElementById("menu-btn");
+const menuDropdown = document.getElementById("menu-dropdown");
+const menuItems = document.querySelectorAll(".menu-item");
+const contentBlocks = document.querySelectorAll(".content-block");
+
+menuBtn.addEventListener("click", () => {
+  menuDropdown.classList.toggle("hidden");
+});
+
+menuItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const target = item.dataset.target;
+
+    contentBlocks.forEach(block => {
+      if(block.id === target) block.classList.remove("hidden");
+      else block.classList.add("hidden");
+    });
+
+    menuDropdown.classList.add("hidden");
+  });
+});
+
 // ================== Календарь записи ==================
 const scheduleBody = document.querySelector("#schedule tbody");
 
 const times = ["10:00", "12:00", "14:00", "16:00"];
-const days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-
-// Пример статуса: 'available' или 'occupied'
 const initialSlots = {
   "10:00": ["occupied","available","occupied","available","available","available","available"],
   "12:00": ["occupied","available","occupied","available","available","available","available"],
@@ -20,14 +40,16 @@ function renderSchedule() {
     timeTd.textContent = time;
     tr.appendChild(timeTd);
 
-    initialSlots[time].forEach((status, dayIndex) => {
+    initialSlots[time].forEach((status) => {
       const td = document.createElement("td");
       td.textContent = status === "available" ? "записаться" : "занято";
       td.className = status;
       if(status === "available") {
         td.addEventListener("click", () => {
-          // Снять выделение с других
-          document.querySelectorAll("td.selected").forEach(el => el.classList.remove("selected"));
+          document.querySelectorAll("td.selected").forEach(el => {
+            el.classList.remove("selected");
+            el.textContent = "записаться";
+          });
           td.classList.add("selected");
           td.textContent = "выбрано";
         });
@@ -44,7 +66,6 @@ renderSchedule();
 // ================== Отзывы ==================
 const reviewForm = document.getElementById("review-form");
 const reviewsSection = document.getElementById("reviews-section");
-
 let reviews = [];
 
 reviewForm.addEventListener("submit", e => {
