@@ -1,67 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Преподаватель английского</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <h1>Преподаватель английского</h1>
-
-  <!-- Аккордеон -->
-  <div class="accordion">
-
-    <!-- Секция отзывы -->
-    <details>
-      <summary>Отзывы</summary>
-      <div id="reviews-section">
-        <!-- Тут позже будут отзывы -->
-      </div>
-      <form id="review-form">
-        <input type="text" id="reviewer" placeholder="Ваше имя" required>
-        <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
-        <button type="submit">Добавить отзыв</button>
-      </form>
-    </details>
-
-    <!-- Секция опыт и дипломы -->
-    <details>
-      <summary>Опыт и сертификаты</summary>
-      <div id="experience">
-        <p>Преподавательский стаж: 5 лет</p>
-        <p>Сертификаты: CELTA, TESOL</p>
-        <!-- Можно добавить изображения дипломов -->
-      </div>
-    </details>
-
-    <!-- Секция запись на урок -->
-    <details>
-      <summary>Запись на урок</summary>
-      <div id="schedule-container">
-        <table id="schedule">
-          <thead>
-            <tr>
-              <th>Время</th>
-              <th>Пн</th>
-              <th>Вт</th>
-              <th>Ср</th>
-              <th>Чт</th>
-              <th>Пт</th>
-              <th>Сб</th>
-              <th>Вс</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS сгенерирует строки слотов -->
-          </tbody>
-        </table>
-      </div>
-    </details>
-
+<div class="top-menu">
+  <div id="menu-btn">•••</div>
+  <div id="menu-dropdown" class="hidden">
+    <div class="menu-item" data-target="reviews-block">Отзывы</div>
+    <div class="menu-item" data-target="experience-block">Опыт и сертификаты</div>
+    <div class="menu-item" data-target="schedule-block">Запись на урок</div>
   </div>
+</div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<div id="reviews-block" class="content-block hidden">
+  <!-- тут форма и отзывы -->
+</div>
+
+<div id="experience-block" class="content-block hidden">
+  <!-- тут опыт и дипломы -->
+</div>
+
+<div id="schedule-block" class="content-block hidden">
+  <!-- тут таблица записи -->
+</div>
